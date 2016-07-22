@@ -1,3 +1,12 @@
 # EupsPkg config file. Sourced by 'eupspkg'
 
-PYSETUP_INSTALL_OPTIONS="--prefix $PREFIX --standalone-lib"
+build()
+{
+    python2.7 setup.py build
+}
+
+install()
+{
+    clean_old_install
+    python2.7 setup.py install --prefix "$PREFIX" --standalone-lib
+}
