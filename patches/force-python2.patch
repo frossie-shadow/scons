@@ -1,8 +1,0 @@
---- a/script/scons	2016-07-22 14:47:11.000000000 -0700
-+++ b/script/scons	2016-07-22 14:47:16.000000000 -0700
-@@ -1,4 +1,4 @@
--#! /usr/bin/env python
-+#! /usr/bin/env python2.7
- #
- # SCons - a Software Constructor
- #
