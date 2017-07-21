@@ -1,0 +1,17 @@
+diff --git a/engine/SCons/Node/FS.py.orig b/engine/SCons/Node/FS.py
+index 517c00f..7d10097 100644
+--- a/engine/SCons/Node/FS.py.orig
++++ b/engine/SCons/Node/FS.py
+@@ -2624,11 +2624,7 @@ class File(Base):
+             return contents[len(codecs.BOM_UTF16_LE):].decode('utf-16-le')
+         if contents[:len(codecs.BOM_UTF16_BE)] == codecs.BOM_UTF16_BE:
+             return contents[len(codecs.BOM_UTF16_BE):].decode('utf-16-be')
+-        try:
+-            return contents.decode()
+-        except (UnicodeDecodeError, AttributeError) as e:
+-            return contents
+-
++        return contents.decode(errors="ignore")
+ 
+     def get_content_hash(self):
+         """
